@@ -40,7 +40,7 @@ if [[ "${OLDLON}" == *"--"* ]]; then
   OLDLON="3.8624516"
 fi
 if [[ "${OLDLOC}" == *"--"* ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JO10xx"
 fi
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="USER"
@@ -63,7 +63,7 @@ fi
 
 gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'RF.')Guru $(gum style --foreground 3 '-') Hotspot Config"
 
-gum style --foreground "#04B575" "Callsign:"
+gum style --foreground "#04B575" "Indicatif:"
 CALL=$(gum input --value "${OLDCALL}")
 if [[ "${CALL}" == "" ]]; then
   CALL=${OLDCALL}
