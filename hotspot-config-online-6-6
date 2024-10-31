@@ -103,12 +103,12 @@ gum style --foreground 212 "${BAND}"
 gum style --foreground "#04B575" "Frequency:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
-    OLDFREQ="439.100"
+    OLDFREQ="446.000"
   fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
-    FREQ=$(gum input --value "439.100")
+    FREQ=$(gum input --value "446.000")
   fi
 fi
 
@@ -168,7 +168,7 @@ gum style --foreground 212 "${LON}"
 
 gum style --foreground "#04B575" "Enter Gridsquare:"
 if [[ "${OLDLOC}" == "" ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JN10EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
@@ -179,7 +179,7 @@ gum style --foreground 212 "${HIDDEN}"
 
 gum style --foreground "#04B575" "Enter talk groups to monitor:"
 if [[ "${OLDTGS}" == "" ]]; then
-  OLDTGS=8
+  OLDTGS=59
 fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
