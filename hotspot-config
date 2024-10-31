@@ -210,7 +210,7 @@ gum confirm "Commit changes?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  say "Backup old config"
+  say "Sauvegarder l'ancienne configuration"
   run "cp /etc/svxlink/svxlink.conf /tmp/svxlink.conf.${EPOCH}"
   run "cp /etc/svxlink/node_info.json /tmp/node_info.json.${EPOCH}"
   run "rm -f /tmp/svxlink.conf"
