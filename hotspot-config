@@ -31,7 +31,7 @@ OLDLON=$(grep -i lon /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "
 OLDLOC=$(grep -i loc /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tail -n 1 |  tr -cd '[:alnum:]._-')
 QSYTIMEOUT=$(cat /etc/svxlink/svxlink.conf | grep QSY_PENDING_TIMEOUT | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDTGS}" == *"--"* ]]; then
-  OLDTGS=8
+  OLDTGS=59
 fi
 if [[ "${OLDLAT}" == *"--"* ]]; then
   OLDLAT="48.5125972"

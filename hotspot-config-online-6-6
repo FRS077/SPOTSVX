@@ -41,7 +41,7 @@ if [[ "${OLDLON}" == *"--"* ]]; then
   OLDLON="3.8624516"
 fi
 if [[ "${OLDLOC}" == *"--"* ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JN18EU"
 fi
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"

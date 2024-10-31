@@ -36,7 +36,7 @@ if [[ "${OLDLON}" == *"--"* ]]; then
   OLDLON="3.8624516"
 fi
 if [[ "${OLDLOC}" == *"--"* ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JN18EU"
 fi
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"
@@ -92,12 +92,12 @@ gum style --foreground 212 "${BAND}"
 gum style --foreground "#04B575" "Frequency:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
-    OLDFREQ="439.100"
+    OLDFREQ="446.000"
   fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
-    FREQ=$(gum input --value "439.100")
+    FREQ=$(gum input --value "446.000")
   fi
 fi
 
