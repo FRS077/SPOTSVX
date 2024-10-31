@@ -34,13 +34,13 @@ if [[ "${OLDTGS}" == *"--"* ]]; then
   OLDTGS=8
 fi
 if [[ "${OLDLAT}" == *"--"* ]]; then
-  OLDLAT="57.4707972"
+  OLDLAT="48.5125972"
 fi
 if [[ "${OLDLON}" == *"--"* ]]; then
-  OLDLON="3.8624516"
+  OLDLON="2.2098516"
 fi
 if [[ "${OLDLOC}" == *"--"* ]]; then
-  OLDLOC="JO10xx"
+  OLDLOC="JN18EU"
 fi
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="USER"
@@ -146,28 +146,28 @@ fi
 
 gum style --foreground "#04B575" "Entrez l'emplacement:"
 if [[ "${OLDLOCATION}" == "" ]]; then
-  OLDLOCATION="Lille"
+  OLDLOCATION="Paris"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
 gum style --foreground "#04B575" "Entrez la latitude:"
 if [[ "${OLDLAT}" == "" ]]; then
-  OLDLAT="57.4707972"
+  OLDLAT="48.5125972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
 gum style --foreground "#04B575" "Entrez la longitude:"
 if [[ "${OLDLON}" == "" ]]; then
-  OLDLON="2.8624516"
+  OLDLON="2.2098516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
 gum style --foreground "#04B575" "Entrez le Locator:"
 if [[ "${OLDLOC}" == "" ]]; then
-  OLDLOC="JO10xx"
+  OLDLOC="JN18EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
