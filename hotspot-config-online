@@ -24,10 +24,10 @@ OLDLON=$(grep -i lon /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "
 OLDLOC=$(grep -i loc /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tail -n 1 |  tr -cd '[:alnum:]._-')
 QSYTIMEOUT=$(cat /etc/svxlink/svxlink.conf | grep QSY_PENDING_TIMEOUT | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDTG}" == *"--"* ]]; then
-  OLDTG=8
+  OLDTG=59
 fi
 if [[ "${OLDTGS}" == *"--"* ]]; then
-  OLDTGS=8
+  OLDTGS=59
 fi
 if [[ "${OLDLAT}" == *"--"* ]]; then
   OLDLAT="50.4707972"
@@ -148,7 +148,7 @@ gum style --foreground 212 "${LON}"
 
 gum style --foreground "#04B575" "Enter Gridsquare:"
 if [[ "${OLDLOC}" == "" ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JN18EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
@@ -159,14 +159,14 @@ gum style --foreground 212 "${HIDDEN}"
 
 gum style --foreground "#04B575" "Enter default talk group:"
 if [[ "${OLDTG}" == "" ]]; then
-  OLDTG=8
+  OLDTG=59
 fi
 TG=$(gum input --value "${OLDTG}")
 gum style --foreground 212 "${TG}"
 
 gum style --foreground "#04B575" "Enter talk groups to monitor:"
 if [[ "${OLDTGS}" == "" ]]; then
-  OLDTGS=8
+  OLDTGS=59
 fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
@@ -243,7 +243,7 @@ if [ $RESULT -eq 0 ]; then
   echo "#!/bin/bash" > /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
   echo "# audio to radio Module" >> /usr/sbin/hotspot_volume
-  echo "amixer set 'Headphone' 80%" >> /usr/sbin/hotspot_volume
+  echo "amixer set 'Headphone' 70%" >> /usr/sbin/hotspot_volume
   echo "# audio from radio Module" >> /usr/sbin/hotspot_volume
   echo "amixer set 'Capture' ${RFVOL}%" >> /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
