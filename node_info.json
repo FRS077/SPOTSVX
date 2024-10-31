@@ -1,0 +1,18 @@
+{
+	"Sysop": "FRS077",
+	"Name": "Romuald",
+    "LAT": "50.68384",
+    "LONG": "2.77094",
+	"nodeLocation": "Lorgies (62)",
+    "Location": "Hauts de France",
+    "Locator": "JO10JN",
+    "RXFREQ": "446.000",
+    "TXFREQ": "446.000",
+    "Website": "http://f62dmr.fr",
+    "Mode": "FM",
+    "Type": "4",
+    "Echolink": "",
+    "LinkedTo": "FM France",
+    "CTCSS": "0",
+    "DefaultTG": "59"
+}
