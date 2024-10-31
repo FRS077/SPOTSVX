@@ -34,7 +34,7 @@ if [[ "${OLDTGS}" == *"--"* ]]; then
   OLDTGS=8
 fi
 if [[ "${OLDLAT}" == *"--"* ]]; then
-  OLDLAT="50.4707972"
+  OLDLAT="57.4707972"
 fi
 if [[ "${OLDLON}" == *"--"* ]]; then
   OLDLON="3.8624516"
@@ -99,7 +99,7 @@ BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Frequency:"
+gum style --foreground "#04B575" "Fréquence:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="446.000"
@@ -124,19 +124,19 @@ fi
 
 gum style --foreground 212 "${FREQ}"
 
-gum style --foreground "#04B575" "Enter CTCSS tone mapping (<tone>:<talkgroup>,...):"
+gum style --foreground "#04B575" "Entrez la tonalité du CTCSS (<tone>:<talkgroup>,...):"
 if [[ "${OLDCTCSSMAPPING}" == "" ]]; then
   OLDCTCSSMAPPING="67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55"
 fi
 CTCSSMAPPING=$(gum input --value "${OLDCTCSSMAPPING}")
 gum style --foreground 212 "${CTCSSMAPPING}"
 
-gum style --foreground "#04B575" "CTCSS on tx:"
+gum style --foreground "#04B575" "CTCSS en tx:"
 CTCSSTX=$(gum choose "Yes" "No")
 gum style --foreground 212 "${CTCSSTX}"
   
 if [[ "${CTCSSTX}" == "Yes" ]]; then
-	gum style --foreground "#04B575" "Enter CTCSS TX tone:"
+	gum style --foreground "#04B575" "Entez le CTCSS TX:"
 	if [[ "${OLDCTCSS}" == "" ]]; then
 	  OLDCTCSS="88.5"
 	fi
@@ -144,39 +144,39 @@ if [[ "${CTCSSTX}" == "Yes" ]]; then
 	gum style --foreground 212 "${CTCSS}"
 fi
 
-gum style --foreground "#04B575" "Enter Location:"
+gum style --foreground "#04B575" "Entrez l'emplacement:"
 if [[ "${OLDLOCATION}" == "" ]]; then
   OLDLOCATION="Lille"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
-gum style --foreground "#04B575" "Enter Latitude:"
+gum style --foreground "#04B575" "Entrez la latitude:"
 if [[ "${OLDLAT}" == "" ]]; then
-  OLDLAT="50.4707972"
+  OLDLAT="57.4707972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
-gum style --foreground "#04B575" "Enter Longitude:"
+gum style --foreground "#04B575" "Entrez la longitude:"
 if [[ "${OLDLON}" == "" ]]; then
-  OLDLON="3.8624516"
+  OLDLON="2.8624516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
-gum style --foreground "#04B575" "Enter Gridsquare:"
+gum style --foreground "#04B575" "Entrez le Locator:"
 if [[ "${OLDLOC}" == "" ]]; then
-  OLDLOC="JO10VK"
+  OLDLOC="JO10xx"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
-gum style --foreground "#04B575" "Hide Location info ?:"
+gum style --foreground "#04B575" "Masquer les informations de localisation ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
-gum style --foreground "#04B575" "Enter talk groups to monitor:"
+gum style --foreground "#04B575" "Entrez dans le groupe de discussion à surveiller:"
 if [[ "${OLDTGS}" == "" ]]; then
   OLDTGS=59
 fi
