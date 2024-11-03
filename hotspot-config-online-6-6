@@ -71,7 +71,7 @@ if [[ "${CALL}" == "" ]]; then
 fi
 gum style --foreground 212 "${CALL}"
 
-gum style --foreground "#04B575" "Adresse du serveur f62dmr.fr (default):"
+gum style --foreground "#04B575" "Adresse du Relfecteur f62dmr.fr (default):"
 REFLECTOR=$(gum input --value "${OLDSVXREFL}")
 if [[ "${REFLECTOR}" == "" ]]; then
   REFLECTOR=${OLDSVXREFL}
@@ -81,14 +81,14 @@ if [[ "${REFLECTOR}" == "34.77.14.144" ]]; then
 fi
 gum style --foreground 212 "${REFLECTOR}"
 
-gum style --foreground "#04B575" "SVXLINK Reflector User Callsign:"
+gum style --foreground "#04B575" "L'indicatif sur le Relfecteur:"
 SVXCALL=$(gum input --value "${OLDSVXCALL}")
 if [[ "${SVXCALL}" == "" ]]; then
   SVXCALL=${OLDSVXCALL}
 fi
 gum style --foreground 212 "${SVXCALL}"
 
-gum style --foreground "#04B575" "Password du serveur:"
+gum style --foreground "#04B575" "Password du Relfecteur:"
 SVXPWD=$(gum input --value "${OLDSVXPWD}")
 if [[ "${SVXPWD}" == "" ]]; then
   SVXPWD=${OLDSVXPWD}
@@ -100,7 +100,7 @@ BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Fréquence:"
+gum style --foreground "#04B575" "Fréquence du HotSpot:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="446.000"
@@ -125,7 +125,7 @@ fi
 
 gum style --foreground 212 "${FREQ}"
 
-gum style --foreground "#04B575" "Enter CTCSS tone mapping (<tone>:<talkgroup>,...):"
+gum style --foreground "#04B575" "Entrer la tonalité CTCSS (<tone>:<talkgroup>,...):"
 if [[ "${OLDCTCSSMAPPING}" == "" ]]; then
   OLDCTCSSMAPPING="67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55"
 fi
@@ -137,7 +137,7 @@ CTCSSTX=$(gum choose "Yes" "No")
 gum style --foreground 212 "${CTCSSTX}"
   
 if [[ "${CTCSSTX}" == "Yes" ]]; then
-	gum style --foreground "#04B575" "Enter CTCSS TX tone:"
+	gum style --foreground "#04B575" "Entrer la tonalité d'émission CTCSS:"
 	if [[ "${OLDCTCSS}" == "" ]]; then
 	  OLDCTCSS="88.5"
 	fi
@@ -177,28 +177,28 @@ gum style --foreground "#04B575" "Masquer les informations de localisation ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
-gum style --foreground "#04B575" "TG à surveiller:"
+gum style --foreground "#04B575" "TG à surveiller (9,59,99):"
 if [[ "${OLDTGS}" == "" ]]; then
   OLDTGS=59
 fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
 
-gum style --foreground "#04B575" "Enter AF output volume [50-80] (default 65):"
+gum style --foreground "#04B575" "Entrer le volume de sortie AF [50-80] (défaut 65):"
 AFVOL=$(gum input --value "${OLDAFVOL}")
 if [[ "${AFVOL}" == "" ]]; then
   AFVOL=65
 fi
 gum style --foreground 212 "${AFVOL}"
 
-gum style --foreground "#04B575" "Enter RF input volume [17-23] (default 19):"
+gum style --foreground "#04B575" "Entrer le volume d'entrée RF [17-23] (default 19):"
 RFVOL=$(gum input --value "${OLDRFVOL}")
 if [[ "${RFVOL}" == "" ]]; then
   RFVOL=19
 fi
 gum style --foreground 212 "${RFVOL}"
 
-gum style --foreground "#04B575" "Enter RF compression [1-8] (default 2):"
+gum style --foreground "#04B575" "Entrer la compression RF [1-8] (default 2):"
 CPVOL=$(gum input --value "${OLDCPVOL}")
 if [[ "${CPVOL}" == "" ]]; then
   RFVOL=2
@@ -207,7 +207,7 @@ gum style --foreground 212 "${CPVOL}"
 
 EPOCH=$(date +%s)
 
-gum confirm "Commit changes?"
+gum confirm "Valider les modifications?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
