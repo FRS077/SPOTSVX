@@ -102,12 +102,12 @@ gum style --foreground 212 "${BAND}"
 gum style --foreground "#04B575" "Fréquence:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
-    OLDFREQ="446.000"
+    OLDFREQ="446.130"
   fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
-    FREQ=$(gum input --value "446.000")
+    FREQ=$(gum input --value "446.130")
   fi
 fi
 
