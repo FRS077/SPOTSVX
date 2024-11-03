@@ -64,14 +64,14 @@ fi
 
 gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'FRS077.')F62SVX $(gum style --foreground 3 '-') Hotspot Config"
 
-gum style --foreground "#04B575" "Callsign:"
+gum style --foreground "#04B575" "Indicatif:"
 CALL=$(gum input --value "${OLDCALL}")
 if [[ "${CALL}" == "" ]]; then
   CALL=${OLDCALL}
 fi
 gum style --foreground 212 "${CALL}"
 
-gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
+gum style --foreground "#04B575" "Adresse du serveur f62dmr.fr (default):"
 REFLECTOR=$(gum input --value "${OLDSVXREFL}")
 if [[ "${REFLECTOR}" == "" ]]; then
   REFLECTOR=${OLDSVXREFL}
@@ -88,19 +88,19 @@ if [[ "${SVXCALL}" == "" ]]; then
 fi
 gum style --foreground 212 "${SVXCALL}"
 
-gum style --foreground "#04B575" "SVXLink Reflector password:"
+gum style --foreground "#04B575" "Password du serveur:"
 SVXPWD=$(gum input --value "${OLDSVXPWD}")
 if [[ "${SVXPWD}" == "" ]]; then
   SVXPWD=${OLDSVXPWD}
 fi
 gum style --foreground 212 "${SVXPWD}"
 
-gum style --foreground "#04B575" "Band:"
+gum style --foreground "#04B575" "Choisir la bande :"
 BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Frequency:"
+gum style --foreground "#04B575" "Fréquence:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="446.000"
@@ -152,32 +152,32 @@ fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
-gum style --foreground "#04B575" "Entrer la Latitude:"
+gum style --foreground "#04B575" "Latitude:"
 if [[ "${OLDLAT}" == "" ]]; then
   OLDLAT="50.4707972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
-gum style --foreground "#04B575" "Entrer la Longitude:"
+gum style --foreground "#04B575" "Longitude:"
 if [[ "${OLDLON}" == "" ]]; then
   OLDLON="3.8624516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
-gum style --foreground "#04B575" "Entrer le locator:"
+gum style --foreground "#04B575" "locator:"
 if [[ "${OLDLOC}" == "" ]]; then
   OLDLOC="JN10EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
-gum style --foreground "#04B575" "Hide Location info ?:"
+gum style --foreground "#04B575" "Masquer les informations de localisation ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
-gum style --foreground "#04B575" "Enter talk groups to monitor:"
+gum style --foreground "#04B575" "TG à surveiller:"
 if [[ "${OLDTGS}" == "" ]]; then
   OLDTGS=59
 fi
