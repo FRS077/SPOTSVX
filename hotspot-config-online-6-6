@@ -100,15 +100,15 @@ BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Fréquence du HotSpot Canal 11 Pmr (Défaut):"
+gum style --foreground "#04B575" "Fréquence du HotSpot fréq: 446.130 (défaut):"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
-    OLDFREQ="446.000"
+    OLDFREQ="446.130"
   fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
-    FREQ=$(gum input --value "446.000")
+    FREQ=$(gum input --value "446.130")
   fi
 fi
 
@@ -147,33 +147,33 @@ fi
 
 gum style --foreground "#04B575" "Entrer votre QTH:"
 if [[ "${OLDLOCATION}" == "" ]]; then
-  OLDLOCATION="Saint Ghislain"
+  OLDLOCATION="Paris"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
-gum style --foreground "#04B575" "Latitude:"
+gum style --foreground "#04B575" "Latitude (50.4707972):"
 if [[ "${OLDLAT}" == "" ]]; then
   OLDLAT="50.4707972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
-gum style --foreground "#04B575" "Longitude:"
+gum style --foreground "#04B575" "Longitude (3.8624516):"
 if [[ "${OLDLON}" == "" ]]; then
   OLDLON="3.8624516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
-gum style --foreground "#04B575" "locator:"
+gum style --foreground "#04B575" "locator (JO10XX):"
 if [[ "${OLDLOC}" == "" ]]; then
   OLDLOC="JN10EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
-gum style --foreground "#04B575" "Masquer les informations de localisation ?:"
+gum style --foreground "#04B575" "Masquer les informations de APRS ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
