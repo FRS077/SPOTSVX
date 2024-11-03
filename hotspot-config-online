@@ -56,7 +56,7 @@ fi
 
 gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'FRS077.')F62SVX $(gum style --foreground 3 '-') Hotspot Config"
 
-gum style --foreground "#04B575" "Callsign:"
+gum style --foreground "#04B575" "Indicatif:"
 CALL=$(gum input --value "${OLDCALL}")
 if [[ "${CALL}" == "" ]]; then
   CALL=${OLDCALL}
@@ -70,26 +70,26 @@ if [[ "${REFLECTOR}" == "" ]]; then
 fi
 gum style --foreground 212 "${REFLECTOR}"
 
-gum style --foreground "#04B575" "SVXLINK Reflector User Callsign:"
+gum style --foreground "#04B575" "Indicatif sur le SVXLINK Reflector:"
 SVXCALL=$(gum input --value "${OLDSVXCALL}")
 if [[ "${SVXCALL}" == "" ]]; then
   SVXCALL=${OLDSVXCALL}
 fi
 gum style --foreground 212 "${SVXCALL}"
 
-gum style --foreground "#04B575" "SVXLink Reflector password:"
+gum style --foreground "#04B575" "Passwor du Reflector:"
 SVXPWD=$(gum input --value "${OLDSVXPWD}")
 if [[ "${SVXPWD}" == "" ]]; then
   SVXPWD=${OLDSVXPWD}
 fi
 gum style --foreground 212 "${SVXPWD}"
 
-gum style --foreground "#04B575" "Band:"
+gum style --foreground "#04B575" "Bande:"
 BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Frequency:"
+gum style --foreground "#04B575" "Fréquence du HotSpot:"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="446.000"
@@ -125,67 +125,67 @@ gum style --foreground "#04B575" "CTCSS on tx:"
 CTCSSTX=$(gum choose "Yes" "No")
 gum style --foreground 212 "${CTCSSTX}"
 
-gum style --foreground "#04B575" "Enter Location:"
+gum style --foreground "#04B575" "Entrer votre location:"
 if [[ "${OLDLOCATION}" == "" ]]; then
   OLDLOCATION="Saint Ghislain"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
-gum style --foreground "#04B575" "Enter Latitude:"
+gum style --foreground "#04B575" "Entrer la Latitude:"
 if [[ "${OLDLAT}" == "" ]]; then
   OLDLAT="50.4707972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
-gum style --foreground "#04B575" "Enter Longitude:"
+gum style --foreground "#04B575" "Entrer la Longitude:"
 if [[ "${OLDLON}" == "" ]]; then
   OLDLON="3.8624516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
-gum style --foreground "#04B575" "Enter Gridsquare:"
+gum style --foreground "#04B575" "Entrer le locator:"
 if [[ "${OLDLOC}" == "" ]]; then
   OLDLOC="JN18EU"
 fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
-gum style --foreground "#04B575" "Hide Location info ?:"
+gum style --foreground "#04B575" "Masquer les informations de localisation ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
-gum style --foreground "#04B575" "Enter default talk group:"
+gum style --foreground "#04B575" "Entrer le TG par default :"
 if [[ "${OLDTG}" == "" ]]; then
   OLDTG=59
 fi
 TG=$(gum input --value "${OLDTG}")
 gum style --foreground 212 "${TG}"
 
-gum style --foreground "#04B575" "Enter talk groups to monitor:"
+gum style --foreground "#04B575" "Entrez le TG discussion à surveiller:"
 if [[ "${OLDTGS}" == "" ]]; then
   OLDTGS=59
 fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
 
-gum style --foreground "#04B575" "Enter QSY timeout:"
+gum style --foreground "#04B575" "Entrez le délai d'attente QSY:"
 QSYTIMEOUT=$(gum input --value "${QSYTIMEOUT}")
 if [[ "${QSYTIMEOUT}" == "" ]]; then
   QSYTIMEOUT=15
 fi
 gum style --foreground 212 "${QSYTIMEOUT}"
 
-gum style --foreground "#04B575" "Enter RF input volume [17-23] (default 19):"
+gum style --foreground "#04B575" "Entrez le volume d'entrée RF [17-23] (default 19):"
 RFVOL=$(gum input --value "${OLDRFVOL}")
 if [[ "${RFVOL}" == "" ]]; then
   RFVOL=19
 fi
 gum style --foreground 212 "${RFVOL}"
 
-gum style --foreground "#04B575" "Enter RF compression [1-8] (default 2):"
+gum style --foreground "#04B575" "Entrez la compression RF [1-8] (default 2):"
 CPVOL=$(gum input --value "${OLDCPVOL}")
 if [[ "${CPVOL}" == "" ]]; then
   RFVOL=2
@@ -194,7 +194,7 @@ gum style --foreground 212 "${CPVOL}"
 
 EPOCH=$(date +%s)
 
-gum confirm "Commit changes?"
+gum confirm "Valider les modifications?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
