@@ -71,7 +71,7 @@ if [[ "${CALL}" == "" ]]; then
 fi
 gum style --foreground 212 "${CALL}"
 
-gum style --foreground "#04B575" "Adresse du Relfecteur f62dmr.fr (default):"
+gum style --foreground "#04B575" "Adresse du Relfecteur f62dmr.fr (défaut):"
 REFLECTOR=$(gum input --value "${OLDSVXREFL}")
 if [[ "${REFLECTOR}" == "" ]]; then
   REFLECTOR=${OLDSVXREFL}
@@ -108,7 +108,7 @@ if [ "${BAND}" = "70cm" ]; then
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
-    FREQ=$(gum input --value "446.000")
+    FREQ=$(gum input --value "446.13125")
   fi
 fi
 
@@ -191,14 +191,14 @@ if [[ "${AFVOL}" == "" ]]; then
 fi
 gum style --foreground 212 "${AFVOL}"
 
-gum style --foreground "#04B575" "Entrer le volume d'entrée RF [17-23] (default 19):"
+gum style --foreground "#04B575" "Entrer le volume d'entrée RF [17-23] (défaut 19):"
 RFVOL=$(gum input --value "${OLDRFVOL}")
 if [[ "${RFVOL}" == "" ]]; then
   RFVOL=19
 fi
 gum style --foreground 212 "${RFVOL}"
 
-gum style --foreground "#04B575" "Entrer la compression RF [1-8] (default 2):"
+gum style --foreground "#04B575" "Entrer la compression RF [1-8] (défaut 2):"
 CPVOL=$(gum input --value "${OLDCPVOL}")
 if [[ "${CPVOL}" == "" ]]; then
   RFVOL=2
@@ -278,7 +278,7 @@ amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotsp
 	systemctl restart fmchip-monitor
   say "Envoyez n'importe quelle tonalité CTCSS à ${FREQ} avec D1# pour activer le perroquet (pour tester les niveaux audio)"
   say "Envoyez une tonalité CTCSS mappée à un canal pour changer de groupe de conversation (uniquement lorsqu'il n'y a pas de trafic et que vous êtes en TG0)"
-  say "Vous voici un petit bicolore lorsque l'on revient en mode écoute sur TG 0, lorsqu'il y a du trafic sur une piste surveillée il sera automatiquement activé !"
+  say "Amusez-vous sur le RNFA - Réseau Nord France Analogique"
 else
 gum style --foreground "#04B575" "Abort!"
 fi
