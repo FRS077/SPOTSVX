@@ -100,10 +100,10 @@ BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
 
-gum style --foreground "#04B575" "Fréquence du HotSpot:"
+gum style --foreground "#04B575" "Fréquence du HotSpot Canal 11 Pmr (Défaut):"
 if [ "${BAND}" = "70cm" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
-    OLDFREQ="446.000"
+    OLDFREQ="446.13125"
   fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
