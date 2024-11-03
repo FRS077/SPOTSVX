@@ -71,7 +71,7 @@ if [[ "${CALL}" == "" ]]; then
 fi
 gum style --foreground 212 "${CALL}"
 
-gum style --foreground "#04B575" "Adresse du Relfecteur f62dmr.fr (défaut):"
+gum style --foreground "#04B575" "Adresse du Relfecteur: f62dmr.fr (défaut):"
 REFLECTOR=$(gum input --value "${OLDSVXREFL}")
 if [[ "${REFLECTOR}" == "" ]]; then
   REFLECTOR=${OLDSVXREFL}
