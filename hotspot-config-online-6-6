@@ -132,7 +132,7 @@ fi
 CTCSSMAPPING=$(gum input --value "${OLDCTCSSMAPPING}")
 gum style --foreground 212 "${CTCSSMAPPING}"
 
-gum style --foreground "#04B575" "CTCSS on tx:"
+gum style --foreground "#04B575" "CTCSS en TX:"
 CTCSSTX=$(gum choose "Yes" "No")
 gum style --foreground 212 "${CTCSSTX}"
   
@@ -211,20 +211,20 @@ gum confirm "Valider les modifications?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  say "Backup old config"
+  say "Backup de l'ancienne configuration"
   run "cp /etc/svxlink/svxlink.conf /tmp/svxlink.conf.${EPOCH}"
   run "cp /etc/svxlink/node_info.json /tmp/node_info.json.${EPOCH}"
   run "rm -f /tmp/svxlink.conf"
-  say "Downloading latest sa818 firmware module"
+  say "Téléchargement du dernier module du firmware sa818"
   run "wget -O /usr/local/bin/sa818 https://raw.githubusercontent.com/Guru-RF/SA818/main/sa818.py > /dev/null 2>&1"
   run "chmod +x /usr/local/bin/sa818"
-  say "Downloading fmchip-monitor"
+  say "Téléchargement de fmchip-monitor"
   run "wget -O /usr/sbin/fmchip-monitor https://raw.githubusercontent.com/FRS077/SPOTSVX/main/fmchip-monitor.py > /dev/null 2>&1"
   run "chmod +x /usr/sbin/fmchip-monitor"
-  say "Downloading latest config template"
+  say "Téléchargement du dernier modèle de configuration"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/FRS077/SPOTSVX/main/svxlink-6.6.conf > /dev/null 2>&1"
   run "wget -O /tmp/node_info.json https://raw.githubusercontent.com/FRS077/SPOTSVX/main/node_info.json > /dev/null 2>&1"
-  say "Applying configuration"
+  say "Application de la configuration"
   cp /tmp/svxlink.conf /etc/svxlink/svxlink.conf
   cp /tmp/node_info.json /etc/svxlink/node_info.json
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
