@@ -240,7 +240,7 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--HIDDEN--/${HIDDEN,,}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
-  say "Configuring hotspot"
+  say "Configuration du hotspot"
   echo "#!/bin/bash" > /usr/sbin/hotspot
   echo "" >> /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
@@ -252,7 +252,7 @@ if [ $RESULT -eq 0 ]; then
   echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
-  say "Configuring hotspot volume"
+  say "Configuration du volume hotspot"
   echo "#!/bin/bash" > /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
   echo "# audio to radio Module" >> /usr/sbin/hotspot_volume
@@ -275,9 +275,9 @@ amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotsp
   /usr/sbin/hotspot_volume > /dev/null 2>&1
 	systemctl restart svxlink
 	systemctl restart fmchip-monitor
-  say "Send any CTCSS tone to ${FREQ} with D1# to activate the parrot (to test audio levels)"
-  say "Send CTCSS tone mapped to a channel to switch talkgroup (only when there is no traffic and you are in TG0)"
-  say "You here a small two-tone when we are back in listening mode on TG0, when there is traffic on a monitored it will be automaticaly activated !"
+  say "Envoyez n'importe quelle tonalité CTCSS à ${FREQ} avec D1# pour activer le perroquet (pour tester les niveaux audio)"
+  say "Envoyez une tonalité CTCSS mappée à un canal pour changer de groupe de conversation (uniquement lorsqu'il n'y a pas de trafic et que vous êtes en TG0)"
+  say "Vous voici un petit bicolore lorsque l'on revient en mode écoute sur TG 0, lorsqu'il y a du trafic sur une piste surveillée il sera automatiquement activé !"
 else
 gum style --foreground "#04B575" "Abort!"
 fi

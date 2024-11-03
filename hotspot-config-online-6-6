@@ -241,7 +241,7 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--HIDDEN--/${HIDDEN,,}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
-  say "Configuring hotspot"
+  say "Configuration hotspot"
   echo "#!/bin/bash" > /usr/sbin/hotspot
   echo "" >> /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
@@ -253,7 +253,7 @@ if [ $RESULT -eq 0 ]; then
   echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
-  say "Configuring hotspot volume"
+  say "Configuration volume du hotspot"
   echo "#!/bin/bash" > /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
   echo "# audio to radio Module" >> /usr/sbin/hotspot_volume
