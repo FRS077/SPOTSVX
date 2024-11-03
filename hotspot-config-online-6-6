@@ -145,28 +145,28 @@ if [[ "${CTCSSTX}" == "Yes" ]]; then
 	gum style --foreground 212 "${CTCSS}"
 fi
 
-gum style --foreground "#04B575" "Enter Location:"
+gum style --foreground "#04B575" "Entrer votre QTH:"
 if [[ "${OLDLOCATION}" == "" ]]; then
   OLDLOCATION="Saint Ghislain"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
 
-gum style --foreground "#04B575" "Enter Latitude:"
+gum style --foreground "#04B575" "Entrer la Latitude:"
 if [[ "${OLDLAT}" == "" ]]; then
   OLDLAT="50.4707972"
 fi
 LAT=$(gum input --value "${OLDLAT}")
 gum style --foreground 212 "${LAT}"
 
-gum style --foreground "#04B575" "Enter Longitude:"
+gum style --foreground "#04B575" "Entrer la Longitude:"
 if [[ "${OLDLON}" == "" ]]; then
   OLDLON="3.8624516"
 fi
 LON=$(gum input --value "${OLDLON}")
 gum style --foreground 212 "${LON}"
 
-gum style --foreground "#04B575" "Enter Gridsquare:"
+gum style --foreground "#04B575" "Entrer le locator:"
 if [[ "${OLDLOC}" == "" ]]; then
   OLDLOC="JN10EU"
 fi
