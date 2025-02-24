@@ -96,12 +96,12 @@ fi
 gum style --foreground 212 "${SVXPWD}"
 
 gum style --foreground "#04B575" "Choisir la bande :"
-BAND=$(gum choose "70cm" "2m")
+BAND=$(gum choose "UHF" "VHF")
 gum style --foreground 212 "${BAND}"
 
 
 gum style --foreground "#04B575" "Fréquence du HotSpot fréq: 446.130 (défaut):"
-if [ "${BAND}" = "70cm" ]; then
+if [ "${BAND}" = "UHF" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="446.130"
   fi
@@ -112,7 +112,7 @@ if [ "${BAND}" = "70cm" ]; then
   fi
 fi
 
-if [ "${BAND}" = "2m" ]; then
+if [ "${BAND}" = "VHF" ]; then
   if [[ "${OLDFREQ}" == "" ]]; then
     OLDFREQ="145.250"
   fi
