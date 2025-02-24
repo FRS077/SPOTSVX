@@ -177,7 +177,7 @@ gum style --foreground "#04B575" "Masquer les informations de APRS ?:"
 HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
-gum style --foreground "#04B575" "TG à surveiller (9,59,99):"
+gum style --foreground "#04B575" "TG à surveiller (59):"
 if [[ "${OLDTGS}" == "" ]]; then
   OLDTGS=59
 fi
