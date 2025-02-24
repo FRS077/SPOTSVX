@@ -127,13 +127,13 @@ gum style --foreground 212 "${FREQ}"
 
 gum style --foreground "#04B575" "Entrer la tonalité CTCSS (<tone>:<talkgroup>,...):"
 if [[ "${OLDCTCSSMAPPING}" == "" ]]; then
-  OLDCTCSSMAPPING="123.0:59"
+  OLDCTCSSMAPPING="67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55"
 fi
 CTCSSMAPPING=$(gum input --value "${OLDCTCSSMAPPING}")
 gum style --foreground 212 "${CTCSSMAPPING}"
 
 gum style --foreground "#04B575" "CTCSS en TX:"
-CTCSSTX=$(gum choose "Oui" "Non")
+CTCSSTX=$(gum choose "Yes" "No")
 gum style --foreground 212 "${CTCSSTX}"
   
 if [[ "${CTCSSTX}" == "Yes" ]]; then
